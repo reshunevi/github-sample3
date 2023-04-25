@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Rest Countries</title>
+</head>
+<body>
+    <div id="country">
+        
+    </div>
+    <script>
+        $.ajax({
+            url:"https://restcountries.com/v3.1/all",
+            type: "GET",
+            success: function(data){
+                var flagSrc = 0;
+                data.forEach(element => {
+                    console.log("Country Name: " +element.name.common)
+                    console.log("Country Region: " +element.region)
+                    console.log("Country Sub Region: " +element.subregion)
+                    console.log("Country Population: " +element.population)
+                    if(flagSrc == 0){
+                        flagSrc = '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4></div>';
+                    }else{
+                        flagSrc += '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4></div>';
+                    }
+                });
+                document.getElementById("country").innerHTML = flagSrc;
+            }
+        })
+
+    </script>
+    
+    
+</body>
+<style>
+    .parentCountry{
+        width: 25%;
+        height: 300px;
+        float: left;
+    }
+
+    .imageClass{
+        width: 320px;
+        height: 213px
+    }
+
+    .countryName{
+        text-align: center;
+    }
+</style>
+</html>

@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Rest Countries</title>
 </head>
 <body>
-    <h1>Abhi's Web App</h1>
+    <h1>Rest Country's Flag</h1>
     <h2>by Resmin</h2>
-</body>
+    <div id="restCountry">
+
+    </div>
+    $.ajax ({
+        url: "https://restcountries.com/v3.1/all",
+        type: "GET",
+        success: function(data) {
+            var flagDetails = 0;
+            data.forEach(element {=>
+            console.log("countryName: " +element.name.common);
+            console.log("countryRegion: " +element.region);
+            console.log("countryPopulation: " +element.population)
+            console.log("countryCapital: " +element.capital)
+            if(flagDetails == 0){
+                flagSrc = '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4><h5 class="countryCapital">' +element.capital+ '</h5></div>';
+                    }else{
+                        flagSrc += '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4><h5 class="countryCapital">' +element.capital+ '</h5></div>';
+                    }}
+                    
+        
+        })
+        document.getElementById("restCountry").innerHTML = flagDetails;
+    }
+
+    });
+</body> 
+
 </html>

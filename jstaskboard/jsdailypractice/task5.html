@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Day 5 Tasks</title>
+</head>
+<body>
+    
+    <script>
+       var printOddNumbersInArray = (inputArray) => {
+        inputArray.forEach(element => {
+            if(element%2 != 0){
+                console.log(element);
+            }
+        });
+    }
+
+    let inputArray = [1,2,3,4,6,8,7,54,25,35,95,76];
+      
+    printOddNumbersInArray(inputArray);
+
+    var convertTitleCaps = (inputArray) =>{
+        inputArray.forEach(element =>{
+            console.log(element.charAt(0).toUpperCase() + element.slice(1));
+        })
+    }
+
+    let inputArray1 = ["ivan", "reshmi", "nevison", "angelin"];
+
+    convertTitleCaps(inputArray1);
+
+    var sumOfAllNumbersInArray = (inputArray) =>{
+        let sum = 0;
+        inputArray.forEach(element =>{
+            sum += element;
+        })
+        console.log("Sum is: " +sum);
+    }
+
+    sumOfAllNumbersInArray(inputArray);
+
+    var returnAllPrimeNumbersInArray = (inputArray) =>{
+        let primeNumbersArray = [];
+        inputArray.forEach(element =>{
+            if(isPrime(element)){
+                primeNumbersArray.push(element)
+            }
+        })
+        return primeNumbersArray
+    }
+
+    const isPrime = num => {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+        if(num % i === 0) return false;
+    }
+    return num > 1;
+    }
+
+    console.log(returnAllPrimeNumbersInArray(inputArray))
+
+
+    var returnAllPalindrome = (inputPalindromArray) =>{
+        let palindromeArray = [];
+        inputPalindromArray.forEach(element =>{
+            if(checkPalindrome(element)){
+                palindromeArray.push(element)
+            }
+        })
+        return palindromeArray
+    }
+
+    const checkPalindrome = (str) =>{
+        var re = /[\W_]/g;
+        
+        var lowRegStr = str.toLowerCase().replace(re, '');
+            
+        var reverseStr = lowRegStr.split('').reverse().join(''); 
+        
+        return reverseStr === lowRegStr;
+    }
+
+    let inputPalindromArray = ["madam", "mam", "reshu"]
+
+    console.log(returnAllPalindrome(inputPalindromArray));
+
+
+    
+    </script>
+    
+</body>
+
+</html>

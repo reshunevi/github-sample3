@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rest Countries</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div id="country">
+
+    </div>
+    
+    <script>
+            $.ajax({
+            url:"https://restcountries.com/v3.1/all",
+            type: "GET",
+            success: function(data){
+                var flagDetails = 0;
+                data.forEach (element=> {
+                    console.log("Country: " +element.name.common)
+                    console.log("Country Region: " +element.region)
+                    console.log("Country Capital: " +element.capital)
+                    console.log("Country Population: " +element.population)
+                    if(flagDetails == 0){
+                        flagDetails = '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4><h5 class="countryCapital">' +element.capital+ '</h5></div>';
+                    }else{
+                        flagDetails += '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4><h5 class="countryCapital">' +element.capital+ '</h5></div>';
+                    }
+                    
+                    });
+                    document.getElementById("country").innerHTML = flagDetails;
+
+                
+            }            
+            
+            })
+    </script>
+    <style>
+        .parentCountry{
+            width: 25%;
+            height: 300px;
+            float: left;
+        }
+    
+        .imageClass{
+            width: 280px;
+            height: 180px
+        }
+    
+        .countryName{
+            text-align: Left;
+        }
+
+        .countryCapital{
+            text-align: Left;
+
+        }
+    </style>
+</body>
+
+</html>
