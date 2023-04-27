@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Loops</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  //for in
+  var person = {
+    fname: "Nick",
+    lname: "Jonas",
+    age: 26
+  }; 
+  for (let x in person) {
+    console.log(x + ": "+ person[x])
+  }
+  var numbers = [ 10, 20, 30, 40, 50] 
+  for (var i=0; i < numbers.length; i++) {
+    console.log(numbers[i])
+  }
+  
+  
+  //for loop
+  
+  var names = ["jerry", "tom", "pluto", "micky", "mini"];
+  names.forEach(function1);
+  function function1(currentValue, index) {
+    console.log("Index in array is: "+index + " ::  Value is: "+currentValue);
+  }
+  var person = {
+    fname: "Nick",
+    lname: "Jonas",
+    age: 26
+  }; 
+  for (let x in person) {
+    console.log(x + ": "+ person[x])
+  }
+  var numbers = [ 10, 20, 30, 40, 50] 
+  for (var i=0; i < numbers.length; i++) {
+    console.log(numbers[i])
+  }
+  
+  var details = {
+    numbers:  [
+        {one: [10, 15, 20, 25, 30]},
+        {two: ['Blue']},
+        {three: ['colour']}
+    ]
+  }; 
+  
+  console.log(details.numbers[0].one[0]);
+  console.log(details.numbers[1]);
+  console.log(details.numbers[2]);
+  for (i=0; i<details.numbers.length; i++) {
+    for (var key in details.numbers[i]) {
+        for (var j= 0; j<details.numbers[i][key].length; j++) {
+            console.log(details.numbers[i][key][j])
+        }
+    }
+  }
+  
+  //ForEach 
+
+  var names = ["jerry", "tom", "pluto", "micky", "mini"];
+  names.forEach(function1);
+  function function1(currentValue, index) {
+    console.log("Index in array is: "+index + " ::  Value is: "+currentValue);
+  }
+  //for of
+
+  function displayValue(e, index){
+for (e of names)
+    {
+    
+    console.log(e);
+    }
+
+}
+displayValue();
+
+</script>
+</html>
