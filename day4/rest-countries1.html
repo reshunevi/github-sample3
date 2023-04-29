@@ -18,12 +18,12 @@
                 data.forEach (element=> {
                     console.log("Country: " +element.name.common)
                     console.log("Country Region: " +element.region)
-                    console.log("Country Capital: " +element.capital)
+                    console.log("Country Capital: " +element.subregion)
                     console.log("Country Population: " +element.population)
-                    if(flagDetails == 0){
-                        flagDetails = '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4><h5 class="countryCapital">' +element.capital+ '</h5></div>';
+                    if(flagDetails == 1){
+                        flagDetails = '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4><p class="countryRegion">' +element.region+ '</p><p class="countrySubRegion">' +element.subregion+ '</p><p class="countryPopulation">' +element.population+ '</p></div>';
                     }else{
-                        flagDetails += '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4><h5 class="countryCapital">' +element.capital+ '</h5></div>';
+                        flagDetails += '<div class="parentCountry"><img class="imageClass" src="' +element.flags.png+ '"><h4 class="countryName">' +element.name.common+ '</h4><p class="countryRegion">' +element.region+ '</p><p class="countrySubRegion">' +element.subregion+ '</p><p class="countryPopulation">' +element.population+ '</p></div>';
                     }
                     
                     });
@@ -37,20 +37,28 @@
     <style>
         .parentCountry{
             width: 25%;
-            height: 300px;
+            height: 350px;
             float: left;
         }
     
         .imageClass{
-            width: 280px;
+            width: 250px;
             height: 180px
         }
     
         .countryName{
-            text-align: Left;
+            text-align: left;
         }
 
-        .countryCapital{
+        .countryRegion{
+            text-align: left;
+
+        }
+        .countrySubRegion{
+            text-align: left;
+
+        }
+        .countryPopulation{
             text-align: Left;
 
         }
