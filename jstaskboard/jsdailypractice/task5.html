@@ -10,6 +10,7 @@
 <body>
     
     <script>
+        //Arrow Function - print Odd numbers in an array
        var printOddNumbersInArray = (inputArray) => {
         inputArray.forEach(element => {
             if(element%2 != 0){
@@ -17,10 +18,25 @@
             }
         });
     }
-
+     
     let inputArray = [1,2,3,4,6,8,7,54,25,35,95,76];
       
     printOddNumbersInArray(inputArray);
+
+        //Anonymous function - print Odd numbers in an array
+    let input = [1,2,3,4];
+    let newArray = [];
+       for(var i = 0; i<4; i++){
+          
+        if(input[i] % 2 != 0){
+
+          newArray.push(input[i]);
+        }
+    
+    }
+     console.log(newArray);
+
+     //Arrow function - convert all strings to title caps in a string array
 
     var convertTitleCaps = (inputArray) =>{
         inputArray.forEach(element =>{
@@ -32,60 +48,75 @@
 
     convertTitleCaps(inputArray1);
 
+    //Anonymous Function - convert all strings to title caps in a string array
+
+    function strToTitleCase(inputString){
+    
+    var output = inputString.split(" ").map(w => w[0].toUpperCase() + w.substring(1).toLowerCase());
+    console.log(output.join(" "));
+    }
+    strToTitleCase("Ram loves to play guitar");
+
+    //Arrow Function - Sum of all numbers in an Array
+
     var sumOfAllNumbersInArray = (inputArray) =>{
         let sum = 0;
-        inputArray.forEach(element =>{
-            sum += element;
+        inputArray.forEach(e =>{
+            sum += e;
         })
         console.log("Sum is: " +sum);
     }
 
-    sumOfAllNumbersInArray(inputArray);
+    sumOfAllNumbersInArray([1,2,5,8,10]);
 
-    var returnAllPrimeNumbersInArray = (inputArray) =>{
-        let primeNumbersArray = [];
-        inputArray.forEach(element =>{
-            if(isPrime(element)){
-                primeNumbersArray.push(element)
-            }
-        })
-        return primeNumbersArray
-    }
+    
+    // Anonymous function - Sum of all numbers in an Array
 
-    const isPrime = num => {
-    for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
-        if(num % i === 0) return false;
-    }
-    return num > 1;
-    }
+    // var returnAllPrimeNumbersInArray = (inputArray) =>{
+    //     let primeNumbersArray = [];
+    //     inputArray.forEach(element =>{
+    //         if(isPrime(element)){
+    //             primeNumbersArray.push(element)
+    //         }
+    //     })
+    //     return primeNumbersArray
+    // }
 
-    console.log(returnAllPrimeNumbersInArray(inputArray))
+    // const isPrime = num => {
+    // for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+    //     if(num % i === 0) return false;
+    // }
+    // return num > 1;
+    // }
+
+    // console.log(returnAllPrimeNumbersInArray(inputArray))
 
 
-    var returnAllPalindrome = (inputPalindromArray) =>{
-        let palindromeArray = [];
-        inputPalindromArray.forEach(element =>{
-            if(checkPalindrome(element)){
-                palindromeArray.push(element)
-            }
-        })
-        return palindromeArray
-    }
+    // var returnAllPalindrome = (inputPalindromArray) =>{
+    //     let palindromeArray = [];
+    //     inputPalindromArray.forEach(element =>{
+    //         if(checkPalindrome(element)){
+    //             palindromeArray.push(element)
+    //         }
+    //     })
+    //     return palindromeArray
+    // }
 
-    const checkPalindrome = (str) =>{
-        var re = /[\W_]/g;
+    // const checkPalindrome = (str) =>{
+    //     var re = /[\W_]/g;
         
-        var lowRegStr = str.toLowerCase().replace(re, '');
+    //     var lowRegStr = str.toLowerCase().replace(re, '');
             
-        var reverseStr = lowRegStr.split('').reverse().join(''); 
+    //     var reverseStr = lowRegStr.split('').reverse().join(''); 
         
-        return reverseStr === lowRegStr;
-    }
+    //     return reverseStr === lowRegStr;
+    // }
 
-    let inputPalindromArray = ["madam", "mam", "reshu"]
+    // let inputPalindromArray = ["madam", "mam", "reshu"]
 
-    console.log(returnAllPalindrome(inputPalindromArray));
+    // console.log(returnAllPalindrome(inputPalindromArray));
 
+    
 
     
     </script>
