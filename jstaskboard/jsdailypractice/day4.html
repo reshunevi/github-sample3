@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Day 5 Tasks</title>
+</head>
+<body>
+    
+    <script>
+        //Arrow Function - print Odd numbers in an array
+       var printOddNumbersInArray = (inputArray) => {
+        inputArray.forEach(element => {
+            if(element%2 != 0){
+                console.log(element);
+            }
+        });
+    }
+     
+    let inputArray = [1,2,3,4,6,8,7,54,25,35,95,76];
+      
+    printOddNumbersInArray(inputArray);
+
+        //Anonymous function - print Odd numbers in an array
+    let input = [1,2,3,4];
+    let newArray = [];
+       for(var i = 0; i<4; i++){
+          
+        if(input[i] % 2 != 0){
+
+          newArray.push(input[i]);
+        }
+    
+    }
+     console.log(newArray);
+
+     //Arrow function - convert all strings to title caps in a string array
+
+    var convertTitleCaps = (inputArray) =>{
+        inputArray.forEach(element =>{
+            console.log(element.charAt(0).toUpperCase() + element.slice(1));
+        })
+    }
+
+    let inputArray1 = ["ivan", "reshmi", "nevison", "angelin"];
+
+    convertTitleCaps(inputArray1);
+
+    //Anonymous Function - convert all strings to title caps in a string array
+
+    function strToTitleCase(inputString){
+    
+    var output = inputString.split(" ").map(w => w[0].toUpperCase() + w.substring(1).toLowerCase());
+    console.log(output.join(" "));
+    }
+    strToTitleCase("Ram loves to play guitar");
+
+    //Arrow Function - Sum of all numbers in an Array
+
+    var sumOfAllNumbersInArray = (inputArray) =>{
+        let sum = 0;
+        inputArray.forEach(e =>{
+            sum += e;
+        })
+        console.log("Sum is: " +sum);
+    }
+
+    sumOfAllNumbersInArray([1,2,5,8,10]);
+
+    
+
+    
+    // Anonymous function - Sum of all numbers in an Array
+    var arr = [1,2,3,4];
+    var sum = arr.reduce(function (x, y){
+    return x + y ;}, 0);
+
+    console.log("Sum of all numbers: " + sum);
+
+
+    //Return all the prime numbers in an array using Arrow function 
+        
+
+    var returnAllPrimeNumbersInArray = (inputArray) =>{
+        let primeNumbersArray = [];
+        inputArray.forEach(element =>{
+            if(isPrime(element)){
+                primeNumbersArray.push(element)
+            }
+        })
+        return primeNumbersArray
+    }
+
+    const isPrime = num => {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+        if(num % i === 0) return false;
+    }
+    return num > 1;
+    }
+
+    console.log(returnAllPrimeNumbersInArray(inputArray))
+
+
+    //Return all the prime numbers in an array using anonymous function
+    var array = [1,3,5,6,8,9,11,21,31,71,107];
+    function isPrime(num) {
+       for (let start = 2; num > start; start++) {
+      
+        if (num % start == 0) {
+        return false;
+         }
+      }
+       return num > 1;
+       }
+
+      console.log(array.filter(isPrime));
+
+
+      
+    //Return all Palindromes in an Array using arrow function
+
+    var returnAllPalindrome = (inputPalindromArray) =>{
+        let palindromeArray = [];
+        inputPalindromArray.forEach(element =>{
+            if(checkPalindrome(element)){
+                palindromeArray.push(element)
+            }
+        })
+        return palindromeArray
+    }
+
+    const checkPalindrome = (str) =>{
+        var re = /[\W_]/g;
+        
+        var lowRegStr = str.toLowerCase().replace(re, '');
+            
+        var reverseStr = lowRegStr.split('').reverse().join(''); 
+        
+        return reverseStr === lowRegStr;
+    }
+
+    let inputPalindromArray = ["madam", "mam", "reshu"]
+
+    console.log(returnAllPalindrome(inputPalindromArray));
+
+
+    // Return all Palindromes in an array using anaonymous function
+    function isPalindrome(word) {
+        palindromeWord = '';
+        for(var i = word.length - 1; i >= 0; i--) {
+            palindromeWord += word.charAt(i);
+            }
+            return palindromeWord === word;
+        }
+        let arr =  ['foo', 'racecar', 'pineapple', 'porcupine', 'pineenip'];
+        let palindromeArr = [];
+        arr.forEach(word => {
+            if (isPalindrome(word)) {
+                palindromeArr.push(word);
+            }
+        });
+        console.log(palindromeArr);
+
+        //Return the median of two sorted arrays of same size
+        function getMedian(ar1, ar2, n)
+        {
+            let j = 0;
+            let i = n - 1;
+            while (ar1[i] > ar2[j] && j < n && i > -1)
+            {
+                let temp = ar1[i];
+                ar1[i] = ar2[j];
+                ar2[j] = temp;
+                i--; 
+                j++;
+            }
+            ar1.sort(function(a, b){return a - b});
+            ar2.sort(function(a, b){return a - b});
+            return parseInt((ar1[n - 1] + ar2[0]) / 2, 10);
+        }
+        let ar1 = [ 1, 12, 15, 26, 38 ];
+        let ar2 = [ 2, 13, 17, 30, 45 ];
+        let n1 = ar1.length;
+        let n2 = ar2.length;
+        if (n1 == n2){
+            console.log("Median is "+ getMedian(ar1, ar2, n1));
+        }
+        else{
+            console.log("Doesn't work for arrays of unequal size");
+        }
+
+        //Remove duplicates in an array
+        let arr = ["1", "2", "2", "3", "4", "3"];
+        function removeDuplicates(arr) {
+            return arr.filter((item,index) => arr.indexOf(item) === index);
+        }
+        console.log(removeDuplicates(arr));
+
+        // Rotate an array by K times
+        const arr = [1, 3, 6, 5, 4];
+        const rotatedArr = arr.map((e, i) => arr[arr.length-i-1]);
+        console.log(rotatedArr);   
+     
+
+
+    
+
+    
+    </script>
+    
+</body>
+
+</html>
