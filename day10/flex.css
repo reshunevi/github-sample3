@@ -1,0 +1,37 @@
+.container{
+    border: 1px solid black;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+}
+/* .green{
+    padding: 20px;
+    margin: 10px;
+    background-color: deeppink;
+}
+.blue{
+    padding: 20px;
+    margin: 10px;
+    background-color: chartreuse;
+}
+
+.red{
+    padding: 20px;
+    margin: 10px;
+    background-color:goldenrod;
+} */
+
+.green, .red, .blue{
+    padding: 20px;
+    margin: 10px;
+    color: bold deeppink;
+} 
+.green{
+    background-color:blue;
+}
+.red{
+    background-color: chartreuse;
+}
+.blue{
+    background-color:cyan;
+}
