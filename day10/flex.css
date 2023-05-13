@@ -3,6 +3,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     display: flex;
+    align-content: center;
+    
+    height: 300 px;
 }
 /* .green{
     padding: 20px;
