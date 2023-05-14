@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Day 4</title>
+    <style>
+        body{
+            padding: 20px;
+
+        }
+        
+        .grandparent {
+            font-size: 20px;
+            color: blue;
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+        }
+
+        .parent{
+            width: inherit;
+            height: inherit;
+            color: mediumorchid;
+            border: inherit;
+
+        }
+
+        .child{
+            border: inherit;
+            width: inherit;
+            height: inherit;
+            color:darkgreen;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Parent Inherit  -->
+    <h2>Parent Inherit</h2>
+    <div class="grandParent">
+        <p>This is grand parent element</p>
+    </div>
+    <div class="parent"> <p> This is Parent Element</p>
+    <div class="child" id="childDiv">
+        <p>This is the child Element</p>
+    </div>
+    
+</body>
+</html>
