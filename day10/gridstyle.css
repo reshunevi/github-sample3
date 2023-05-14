@@ -1,0 +1,26 @@
+.grid-container {
+    display: grid;
+    /* grid-template-columns: 100px 200px 300px; */
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.grid-item{
+    border: 2px solid black;
+    text-align: center;
+    padding: 20px;
+    color: rebeccapurple;
+       
+} 
+
+.row1{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.row2{
+    grid-template-columns: 1fr 2fr;
+}
+
+.row3{
+    grid-template-columns: 1fr;
+}
+  
