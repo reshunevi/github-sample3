@@ -5,9 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Document</title>
+    <title>Rest Countries API</title>
+    <h2>Rest Countries</h2>
 </head>
 <body>
-    
+    <div id="country">
+        console.log(element.name.common);
+    </div>
+
+    <script>
+         const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                let data = JSON.parse(xhr.response);
+                }
+                xhttp.open("GET", "https://restcountries.com/v3.1/all");
+                for(let index = 0; index < data.length; index++)
+                {
+                    console.log(data[index].)
+                }
+                xhttp.send();
+        
+           
+
+
+    </script>
 </body>
 </html>

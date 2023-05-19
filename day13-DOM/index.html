@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="firstDiv"></div>
+    <div id="secondDiv"></div>
+    <script>
+        // let header = document.createElement('h1');
+        // header.textContent='Dynamic Heading';
+        // // document.body.appendChild(header);
+
+        // // create a paragraph element
+        // let paragraph = document.createElement('p');
+    
+        // //set content of the paragraph element
+        // paragraph.textContent='This is dynamically created paragraph.!';
+    
+        // //append the paragraph element to the body
+        // // document.body.appendChild(paragraph);
+        // document.getElementById('firstDiv').append(header,paragraph);
+
+        // let link = document.createElement('a');
+        // link.href = 'https//www.google.com' ; 
+        // link.textContent = 'Visit google.com'
+        
+        // document.getElementById('firstDiv').appendChild(link);
+        
+        // let googleLogo = document.createElement('img');
+
+        // googleLogo.setAttribute('src', 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png');
+
+        // googleLogo.setAttribute('class','logo')
+        // googleLogo.id = 'google-logo';
+
+        // googleLogo.style.width ="150px";
+        // googleLogo.style.border="1px solid blue";
+
+        // document.getElementById('secondDiv').appendChild(googleLogo);
+
+        let heading = `<h1>Heading</h1>` ;
+        document.getElementById('firstDiv').innerHTML = heading;
+
+    </script>
+
+</body>
+
+</html>
