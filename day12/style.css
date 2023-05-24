@@ -1,4 +1,18 @@
 .darkgrey-white{
-    background-color: darkslategray;
-    color: white
+    background-color:darkslategrey;
+    color: white;   
+}
+
+.container{
+    background-color:darkgrey;
+}
+
+.card-body{
+    background-color:darkslategrey;
+    color:darkgray;
+}
+
+.form-control{
+    background-color:darkslategray;
+    color:darkgray;
 }
