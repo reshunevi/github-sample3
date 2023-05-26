@@ -1,18 +1,22 @@
 .darkgrey-white{
     background-color:darkslategrey;
-    color: white;   
+    color: whitesmoke;   
 }
 
 .container{
     background-color:darkgrey;
+    
 }
 
 .card-body{
     background-color:darkslategrey;
     color:darkgray;
+    border-radius: 10px;
+    
 }
 
 .form-control{
     background-color:darkslategray;
     color:darkgray;
+   
 }
