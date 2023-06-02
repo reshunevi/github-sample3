@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css" 
+    <title>CRUD with HTML, CSS and Javascript</title>
+</head>
+<body>
+    <h2>Create Post</h2>
+    <form id="create-post-form">
+        <label for="title" required>Title: </label>
+        <input type="text" id="title">
+
+        <br><br>
+        <label for="body" required>Body:</label>
+        <textarea id="body" required></textarea>
+
+        <br><br>
+        <button type="submit">Create Post</button>
+        <h2>Edit Post</h2>
+        <form style="display: none" id="">
+            <input type="hidden" id="edit-post-id">
+            <label for="edit-title">Title: </label>
+            <input type="text" id="edit-title" required>
+
+            <label for="edit-body">Body:</label>
+        </form>
+    </form>
+
+    <table id="posts-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+   
+    
+    <script src="./script.js"></script>
+</body>
+</html>
