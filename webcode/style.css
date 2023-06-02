@@ -1,0 +1,12 @@
+#main{
+    overflow: hidden;
+}
+
+.card-title{
+    text-transform: capitalize;
+}
+
+.buttonClass{
+    text-align: center;
+    padding: 50px;
+}
