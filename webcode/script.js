@@ -53,9 +53,9 @@ async function getDetails1(element){
         // console.log(pokemonAbilities)
 
         if(details == 0){
-            details = '<div class="row"><div class="card" style="width: 100%;"><img src="'+pokemonDetails.sprites.front_default+'" class="card-img-top"><div class="card-body"><h5 class="card-title">'+pokemonDetails.name+'</h5><p class="card-text">Abilities : '+pokemonAbilities+'</p><p class="card-text">Moves : '+pokemonMoves+'</p><p class="card-text">Weight : '+pokemonDetails.weight+' Kg</p></div><div class="card-body"></div></div></div>'
+            details = '<div class="row"><div class="card" style="width: 100%;"><div class="card-body"><h5 class="card-title">'+pokemonDetails.name+'</h5><div class="row"><div class= col-4 mt-4><img style="width: 50%; height:50%;" src="'+pokemonDetails.sprites.front_default+'" class="card-img-top"></div><div class="col-8"><p class="card-text" id="pokeAbility">Abilities : '+pokemonAbilities+'</p><p class="card-text" id="pokeMoves">Moves : '+pokemonMoves+'</p><p class="card-text" id="pokeWeight">Weight : '+pokemonDetails.weight+' Kg</p></div></div><div class="card-body"></div></div></div></div>'
         }else{
-            details += '<div class="row"><div class="card" style="width: 100%;"><img src="'+pokemonDetails.sprites.front_default+'" class="card-img-top"><div class="card-body"><h5 class="card-title">'+pokemonDetails.name+'</h5><p class="card-text">Abilities : '+pokemonAbilities+'</p><p class="card-text">Moves : '+pokemonMoves+'</p><p class="card-text">Weight : '+pokemonDetails.weight+' Kg</p></div><div class="card-body"></div></div></div>'
+            details += '<div class="row"><div class="card" style="width: 100%;"><div class="card-body"><h5 class="card-title">'+pokemonDetails.name+'</h5><div class="row"><div class= col-4 mt-4><img style="width: 50%; height:50%;" src="'+pokemonDetails.sprites.front_default+'" class="card-img-top"></div><div class="col-8"><p class="card-text id="pokeAbility">Abilities : '+pokemonAbilities+'</p><p class="card-text" id="pokeMoves">Moves : '+pokemonMoves+'</p><p class="card-text" id="pokeWeight">Weight : '+pokemonDetails.weight+' Kg</p></div></div><div class="card-body"></div></div></div></div>'
         }
 
         document.getElementById("main").innerHTML = details;

@@ -2,11 +2,32 @@
     overflow: hidden;
 }
 
+h1{
+    font-style: normal;
+    text-align:center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color:seagreen;
+}
+
 .card-title{
     text-transform: capitalize;
+    color:navy
+}
+
+.card-body{
+    border-radius: 20px;
+    border-color:lightseagreen;
 }
 
 .buttonClass{
     text-align: center;
     padding: 50px;
 }
+
+.card-text{
+    font-style:oblique;
+    font-family: Geneva;
+    color: rgb(34, 18, 136);
+}
+
