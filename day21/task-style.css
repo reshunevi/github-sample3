@@ -1,0 +1,11 @@
+#errorMsg {
+    display: none;
+}
+
+#wordName {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+    font-size: large;
+    color:blue;
+    padding-top: 2rem;
+}
+ 
