@@ -36,6 +36,7 @@ async function getmeaning(word) {
         // show the details below the input box
         // create a paragraph
         let paragraph = document.createElement('p');
+        
 
         // reset the wordInfo
         wordInfo.innerHTML = '';
@@ -46,10 +47,7 @@ async function getmeaning(word) {
         // set the content of the paragraph element
         paragraph.innerHTML = `
         <span class='fas fa-volume-up audio-icon'></span>
-        <audio class='audio'>
-            <source src=${audioSource} type='audio/mpeg'>
-        </audio>
-        Word: <b>${data[0].word}</b>`;
+        <audio class='audio'><source src=${audioSource} type='audio/mpeg'></audio>Word: <b>${data[0].word}</b>`;
 
         // append the created paragraph to the wordInfo
         wordInfo.appendChild(paragraph);
@@ -63,9 +61,9 @@ async function getmeaning(word) {
         let list = document.createElement('ul');
         list.style.listStyletype = 'none';
 
-         let meanings = data[0].meanings;
+         let meaningsArray = data[0].meanings;
 
-          for (let meaning of meanings) {
+          for (let meaning of meaningsArray) {
             //create  a list item
              let listItem = document.createElement('li');
 
@@ -77,14 +75,14 @@ async function getmeaning(word) {
              subList.style.listStyleType = 'disc';
 
               // get the definitions
-            let definitions = meaning.definitions;           
+            let definitionsArray = meaning.definitions;           
 
-            for (let definition of definitions) {
+            for (let definitionObj of definitionsArray) {
                 // create a list item
                 let subListItem = document.createElement('li');
 
                 // set the content of the list item
-                subListItem.innerHTML = `${definition.definition}`;
+                subListItem.innerHTML = `${definitionObj.definition}`;
 
                 // append the list item to the list
                 subList.appendChild(subListItem);
