@@ -1,0 +1,23 @@
+.container{
+    background: url("./weather.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 620px;
+}
+
+#title{
+    color:cornflowerblue;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:large;
+    
+}
+
+.getDetails{
+    color:cornflowerblue;
+    padding: 5% 8% ;
+}
+
+#myBtn{
+    display: hidden;
+}
