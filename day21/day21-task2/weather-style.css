@@ -21,3 +21,9 @@
 #myBtn{
     display: hidden;
 }
+
+.weatherDetails{
+    color:aliceblue;
+    text-align: center;
+    
+}

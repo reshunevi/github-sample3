@@ -13,24 +13,50 @@ async function displayWeatherDetails(cityName) {
         response = await fetch(`https://goweather.herokuapp.com/weather/${cityName}`);
         let data = await response.json();
 
+        //select id and create lists
+
+        let displayDetails = document.getElementById("displayWeather");
+        let firstListItem = document.createElement('ul');
+
+        // for (let weatherInfo of data){
+
+          
         let displayDescription = data.description;
         let displayTemperature = data.temperature;
         let displayWind = data.wind;
-        
-        let displayForecast = data.forecast;
-        let listItem = document.createElement('ul');
+
+          let listOfWeather = document.createElement('li');
+          listOfWeather.style.listStyleType = 'none';
+
+          listOfWeather.innerHTML = `<li>Description: ${displayDescription}</li><li>Temperature: ${displayTemperature}</li><li>Wind: ${displayWind}</li>`
+
+          firstListItem.appendChild(listOfWeather); 
+          displayDetails.appendChild(firstListItem);  
+
+          console.log(displayDetails);
+
+          //create list for forecast
+
+           let displayForecast = data.forecast;
+           let listItem = document.createElement('ul');
 
         for (details of displayForecast){
           let subListItem = document.createElement('li');
-          listItem.style.listStyleType = 'square';
+          subListItem.style.listStyleType = 'none';
 
-          subListItem.innerHTML = `<li>Day: ${displayForecast[0].day} </li> <li>Temperature: ${displayForecast[0].temperature}</li> <li>Wind: ${displayForecast[0].wind}</li>`
+          subListItem.innerHTML = `<li>Forecast:</li><li>Day: ${details.day} </li> <li>Temperature: ${details.temperature}</li> <li>Wind: ${details.wind}</li>`
           listItem.appendChild(subListItem);
 
         }
+
+        displayDetails.appendChild(listItem);
         
+        // }
+
         
-        console.log(data.details);
+       
+               
+        
 
     } catch (error){
         console.error('error fetching the weather api')
