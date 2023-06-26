@@ -18,9 +18,7 @@ async function displayWeatherDetails(cityName) {
         let displayDetails = document.getElementById("displayWeather");
         let firstListItem = document.createElement('ul');
 
-        // for (let weatherInfo of data){
-
-          
+           
         let displayDescription = data.description;
         let displayTemperature = data.temperature;
         let displayWind = data.wind;
@@ -50,12 +48,8 @@ async function displayWeatherDetails(cityName) {
         }
 
         displayDetails.appendChild(listItem);
-        
-        // }
-
-        
-       
-               
+    
+                
         
 
     } catch (error){
